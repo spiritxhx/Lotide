@@ -26,6 +26,9 @@ const eqObjects = (object1, object2) => {
     if (!eqArrays(object1[key],object2[key])) {
       return false;
     }
+    if ((typeof(object1[key])==='number')&&object1[key] !== object2[key]){
+      return false;
+    }
   }
   for (key in object2) {
     if (!object1[key]) {
@@ -35,11 +38,12 @@ const eqObjects = (object1, object2) => {
   return true;
 }
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true); // => true
+const ab = { a: 1, b: 2 };
+const ba = { b: 2, a: 2 };
+assertEqual(eqObjects(ab, ba), false); // => true
 const abc = { a: "1", b: "2", c: "3" };
 assertEqual(eqObjects(ab, abc), false); // => false
+// console.log(eqArrays(1,2));
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };

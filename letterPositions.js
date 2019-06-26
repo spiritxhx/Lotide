@@ -27,6 +27,7 @@ const eqArrays = (array1, array2) => {
 
 
 const letterPositions = word => {
+  let word=word.split(' ').join('');
   let result = {};
   for (let i = 0; i < word.length; i++) {
     if (result[word[i]]) {
