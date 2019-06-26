@@ -12,11 +12,15 @@ const countLetters = word => {
   for (let i = 0; i < word.length; i++) {
     if (result[word[i]]) {
       result[word[i]]++;
+    } else if (word[i]===' ') {
+
     } else {
       result[word[i]] = 1;
     }
   }
   return result;
 }
+console.log(countLetters(' Hello'));
 
-assertEqual(countLetters('hello')['l'], 2);
+
+// assertEqual(countLetters(' hello')[' '], 1);

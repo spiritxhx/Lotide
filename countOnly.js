@@ -10,10 +10,6 @@ const assertEqual = (actual, expected) => {
 const countOnly = (allItems, itemsToCount) => {
   let result = {};
   for (let i = 0; i < allItems.length; i++) {
-    // console.log(allItems[i]);
-    
-    // console.log(itemsToCount[allItems[i]]);
-    
     if (itemsToCount[allItems[i]]) {
       if (result[allItems[i]]) {
         result[allItems[i]]++;
@@ -22,7 +18,6 @@ const countOnly = (allItems, itemsToCount) => {
         result[allItems[i]] = 1;
       }
     }
-
   }
   return result;
 }

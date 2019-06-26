@@ -20,8 +20,6 @@ const eqArrays = (array1, array2) => {
 
 const eqObjects = (object1, object2) => {
   for (key in object1) {
-    // console.log(key);
-
     if (!object2[key]) {
       return false;
     }
@@ -30,8 +28,6 @@ const eqObjects = (object1, object2) => {
     }
   }
   for (key in object2) {
-    // console.log(key);
-
     if (!object1[key]) {
       return false;
     }
