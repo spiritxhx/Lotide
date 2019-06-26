@@ -34,10 +34,23 @@ const flatten = array => {
       }
     } else {
       output.push(array[i]);
+      // flatten(array[i])
     }
   }
   console.log(output);
   return output;
 }
 
-flatten([1, 2, [3, 4], 5, [6]]);
+const flattenRecurse = array =>{
+  let output=[];
+  array.forEach(ele=>{
+    if (Array.isArray(ele)){
+      output.push(...flatten(ele));
+    } else {
+      output.push(ele);
+    }
+  });
+  return output;
+}
+
+console.log(flattenRecurse([1, 2, [3, [4]], 5, [6]]));
