@@ -32,9 +32,9 @@ const letterPositions = word => {
     if (result[word[i]]) {
       result[word[i]].push(i);
     } else {
-      result[word[i]]=[i];
+      result[word[i]] = [i];
     }
   }
   return result;
 }
-console.log(assertArraysEqual(letterPositions('hello').h, [0]));
+console.log(assertArraysEqual(letterPositions('hello')['l'], [2, 3]));
