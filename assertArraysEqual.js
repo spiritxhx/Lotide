@@ -5,13 +5,14 @@ const assertArraysEqual = (actual, expected) => {
     } else {
       return (`\u{1f602} \u{1f602}  Assertion Failed: ${actual} !== ${expected}`);
     }
-  } else {
-    if (actual === expected) {
-      return (`\u{1f600} \u{1f600}  Assertion Passed: ${actual} === ${expected}`);
-    } else {
-      return (`\u{1f602} \u{1f602}  Assertion Failed: ${actual} !== ${expected}`);
-    }
   }
+  // else {
+  //   if (actual === expected) {
+  //     return (`\u{1f600} \u{1f600}  Assertion Passed: ${actual} === ${expected}`);
+  //   } else {
+  //     return (`\u{1f602} \u{1f602}  Assertion Failed: ${actual} !== ${expected}`);
+  //   }
+  // }
 };
 const eqArrays = (array1, array2) => {
   if (array1.length !== array2.length) {
@@ -24,8 +25,3 @@ const eqArrays = (array1, array2) => {
     return true;
   }
 }
-console.log(assertArraysEqual(1, 2));
-console.log(assertArraysEqual(2, 2));
-console.log(assertArraysEqual([1, 2, 3], 2));
-console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
-console.log(assertArraysEqual([1, 2, 3], [1, 2, '3']));
