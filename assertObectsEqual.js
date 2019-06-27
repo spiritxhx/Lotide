@@ -37,9 +37,9 @@ const eqObjects = (object1, object2) => {
 
 const assertObjectsEqual = (actual, expected) => {
   if (eqObjects(actual, expected)) {
-    console.log(`\u{1f600} \u{1f600}  Assertion Passed: ${JSON.stringify(actual)} === ${JSON.stringify(expected)}`);
+    return(`\u{1f600} \u{1f600}  Assertion Passed: ${JSON.stringify(actual)} === ${JSON.stringify(expected)}`);
   } else {
-    console.log(`\u{1f602} \u{1f602}  Assertion Failed: ${JSON.stringify(actual)} !== ${JSON.stringify(expected)}`);
+    return(`\u{1f602} \u{1f602}  Assertion Failed: ${JSON.stringify(actual)} !== ${JSON.stringify(expected)}`);
   }
 }
 
