@@ -44,7 +44,7 @@ const eqObjects = (obj1, obj2) => {
   return obj1 && obj2 && tObj1 === 'object' && tObj1 === tObj2 ? (
     ok(obj1).length === ok(obj2).length &&
     ok(obj1).every(key => eqObjects(obj1[key], obj2[key]))
-  ) : (obj1 === obj2);
+  ) : (obj1 === obj2 );
 }
 
 
@@ -62,7 +62,7 @@ assertEqual(eqObjects(cd, dc), true); // => true
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false); // => false
 
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) // => true
+assertEqual(eqObjects({ a: { z: 1 }, b: null }, { a: { z: 1 }, b: null }), true) // => true
 
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }),false) // => false
