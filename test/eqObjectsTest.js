@@ -4,7 +4,7 @@ const assert = chai.assert;
 
 const eqObjects = require('../eqObjects');
 
-describe('eqObjects', function () {
+describe('#eqObjects', function () {
   it('Base: {a: 1, b: 2} eq {a: 1, b: 2}', function () {
     const object1 = { a: 1, b: 2 };
     const object2 = { a: 1, b: 2 };

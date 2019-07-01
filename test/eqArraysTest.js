@@ -4,7 +4,7 @@ const assert = chai.assert;
 
 const eqArrays = require('../eqArrays');
 
-describe('eqArrays', function () {
+describe('#eqArrays', function () {
   it('Base: [1, 2, 3] eq [1, 2, 3]', function () {
     const array1 = [1, 2, 3];
     const array2 = [1, 2, 3];
