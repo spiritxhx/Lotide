@@ -28,7 +28,6 @@ const eqArrays = (obj1, obj2) => {
     isNaN(obj1) && isNaN(obj2) && tObj1 === 'number' && tObj2 === tObj1 ||
     String(obj1) === String(obj2) && tObj2 === 'function' && tObj1 === tObj2);
 }
-
-assertEqual(eqArrays(['1', '2', '3'], ['1', '2', "3"]), true);
+// (eqArrays(['1', '2', '3'], ['1', '2', "3"]), true);
 
 module.exports = eqArrays;
