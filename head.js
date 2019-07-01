@@ -8,6 +8,4 @@ const head = array => {
   return array[0];
 }
 
-// assertEqual(head([]), 5);
-// console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
 module.exports = head;
