@@ -24,7 +24,11 @@ const eqArrays = (obj1, obj2) => {
   return obj1 && obj2 && tObj1 === 'object' && tObj1 === tObj2 ? (
     ok(obj1).length === ok(obj2).length &&
     ok(obj1).every(key => eqArrays(obj1[key], obj2[key]))
-  ) : (obj1 === obj2);
+  ) : (obj1 === obj2 ||
+    isNaN(obj1) && isNaN(obj2) && tObj1 === 'number' && tObj2 === tObj1 ||
+    String(obj1) === String(obj2) && tObj2 === 'function' && tObj1 === tObj2);
 }
 
 assertEqual(eqArrays(['1', '2', '3'], ['1', '2', "3"]), true);
+
+module.exports = eqArrays;

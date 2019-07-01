@@ -46,25 +46,30 @@ const eqObjects = (obj1, obj2) => {
     tObj1 === tObj2 ? (
       ok(obj1).length === ok(obj2).length &&
       ok(obj1).every(key => eqObjects(obj1[key], obj2[key]))
-    ) : (obj1 === obj2 || isNaN(obj1) && isNaN(obj2));
+    ) : (obj1 === obj2 ||
+      isNaN(obj1) && isNaN(obj2) && tObj1 === 'number' && tObj2 === tObj1 ||
+      String(obj1) === String(obj2) && tObj2 === 'function' && tObj1 === tObj2);
 }
 
 
-const ab = { a: 1, b: 2 };
-const ba = { b: 2, a: 2 };
-assertEqual(eqObjects(ab, ba), false); // => true
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false); // => false
+// const ab = { a: 1, b: 2 };
+// const ba = { b: 2, a: 2 };
+// assertEqual(eqObjects(ab, ba), false); // => true
+// const abc = { a: "1", b: "2", c: "3" };
+// assertEqual(eqObjects(ab, abc), false); // => false
 // console.log(eqArrays(1,2));
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2), false); // => false
 
-assertEqual(eqObjects({ a: { z: NaN }, b: NaN }, { a: { z: NaN }, b: NaN }), true) // => true
+// assertEqual(eqObjects({ a: { z: NaN }, b: NaN }, { a: { z: NaN }, b: NaN }), true) // => true
 
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false) // => false
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false) // => false
+
+
+module.exports = eqObjects;
