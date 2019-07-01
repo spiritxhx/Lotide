@@ -1,5 +1,8 @@
 const assertEqual = require('../assertEqual');
 
-// TEST CODE
-console.log(assertEqual("hans", "hans"));
-console.log(assertEqual(1, 2));
+
+describe('#asserEqual', ()=>{
+  it('return true for assertEqual("hans", "hans")', ()=>{
+    assertEqual('hans', 'hans');
+  })
+})
