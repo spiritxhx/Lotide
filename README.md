@@ -33,3 +33,7 @@ The following functions are currently implemented:
 * `middle(Array)`: Return the middle element(s) of the given Array, return 1 element if Array.length is odd, return 2 elements if Array.length is even. 
 * `tail(Array)`: Return the Array without the 1st element. 
 * `assertArraysEqual(Array1, Array2)`: Compare Array1 and Array2, console.log out the comparison result with emojis.
+* `flatten(Array)`: Modify the multiple level nested arrays to a single level array and return it. 
+* `countOnly(Object, namesToCount)`: Return an object containing the counts for given names in Object. 
+* `letterPostions(String)`: Return an object containing the appearance positions for each letter in the String. 
+* `findKeyByValue(Object, value)`: Return the key(s) which have the given value in Object. 
